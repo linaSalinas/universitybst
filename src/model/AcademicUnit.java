@@ -1,6 +1,6 @@
 package model;
 
-public class AcademicUnit implements Comparable{
+public class AcademicUnit implements Comparable<AcademicUnit>{
 	
 	private String name;
 	private  int code;
@@ -52,9 +52,20 @@ public class AcademicUnit implements Comparable{
 	}
 
 	@Override
-	public int compareTo(Object arg0) {
+	public int compareTo(AcademicUnit au) {
+	
+		int comparation = 0;
+		if(this.getCode()>au.getCode()) {
+			comparation = 1;
+		}
+		else if(this.getCode()==au.getCode()) {
+			return comparation;
+		}
+		else if(this.getCode()<au.getCode()) {
+			comparation = -1;
+		}
+		return comparation;
 		
-		return 0;
 	}
 
 
